@@ -2,17 +2,20 @@
     --font_family: 'Ysabeau SC';
     --font_size: 18px;
     --background_color: #000;
-    --background_image: url("../img/background.jpeg");
+    --background_image: url("../img/daybg.jpg");
     --image_border_color: #1f232e;
     --image_border_px: 3px;
     --image_width: 140px;
     --image_height: 140px;
+    --icon_width: 50px;
+    --icon_height: 50px;
     --title_color: #ffffff;
     --description_color: #fff;
     --svg_color: #fff;
     --menu_background_color: #4747478e;
     --menu_text_color: #fff;
     --menu_active_text_color: #ffffff;
+    --button_background_hover_color: #456782;
     --button_background_color: #4747478e;
     --button_text_color: #fff;
     --button_text_hover_color: #ffffff;
@@ -78,8 +81,13 @@ body {
 .header_text h1 {
     color: var(--title_color);
         font: 2.5em var(--font_family);
+    padding: 1em;
 }
 
+.flex_row_center.header_position {
+    justify-content: left;
+    padding: 2em 0 2em 5em;
+}
 
 /* Social Media Icons Codes */
 
@@ -90,7 +98,7 @@ body {
 .button {
     margin-left: flex;
     margin-right: flex;
-    padding: 5px;
+    padding: 2em;
 }
 
 .header_svg_item+.header_svg_item {
@@ -134,6 +142,36 @@ body {
 
 .header_nav_menu_item+.header_nav_menu_item {
     margin-left: 0.4em;
+}
+
+.color_change_container {
+    padding: 0.4em;
+    border-radius: 0.3em;
+    background-color: var(--menu_background_color);
+    position: absolute;
+    top: 8%;
+    left: 93%;
+}
+
+.color_change_container img {
+    margin: 0.2em;
+    padding: 0.4em;
+    width: var(--icon_width);
+    border-radius: 0.3em;
+}
+
+.color_change_container img:hover {
+    background-color: var(--button_background_hover_color);
+    color: var(--button_text_hover_color);
+    animation: fadeIn 0.5s forwards, fadeOut 0.2s 2.2s forwards;
+}
+@keyframes fadeIn {
+    from { opacity: 0}
+    to { opacity: 1}
+}
+@keyframes fadeOut {
+    from { opacity: 1}
+    to { opacity: 0}
 }
 
 /* Menu Container Codes */
@@ -185,6 +223,18 @@ main {
     flex-direction: row;
 }
 
+.main_small_button_list p{
+    padding: 0.3em;
+    margin: 0.3em;
+    text-align: left;
+}
+
+.main_small_button_item a{
+    padding: 0.3em;
+    margin: 0.3em;
+    text-align: left;
+}
+
 .main_small_a_item {
     margin-top: 1em;
     font: var(--font_size) var(--font_family);
@@ -233,7 +283,7 @@ main {
 
 /* Responsive Codes */
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .main_text_item {
         width: 92vw;
     }
