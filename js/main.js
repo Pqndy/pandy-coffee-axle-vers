@@ -1,5 +1,4 @@
 /* Menu Active Codes */
-
 let targets = document.querySelectorAll('[data-target]')
 targets.forEach(element => {
   element.addEventListener('click', () => {
@@ -14,3 +13,29 @@ targets.forEach(element => {
   })
 })
 
+/* Date Time */
+function dateTime() {
+  const date = new Date();
+  document.getElementById('date-time').innerText = date.toLocaleString('en-GB', {timeZone: 'Australia/Sydney'});
+}
+setInterval(dateTime, 1000);
+
+/* Toggle Dark Mode */
+
+const modeToggle = document.getElementById('mode-toggle');
+const body = document.body;
+const modeToggleImage = document.getElementById('mode-toggle-img');
+
+let isDay = true;
+
+
+modeToggle.addEventListener('click', () => {
+	body.classList.toggle('dark-mode');
+  if (isDay) {
+    modeToggleImage.src = './img/sun_icon.png';
+    isDay = false;
+  } else {
+    modeToggleImage.src = './img/moon_icon.png';
+    isDay = true;
+  }
+});

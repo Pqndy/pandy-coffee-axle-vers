@@ -7,7 +7,9 @@
     <link rel="icon" type="image/x-icon" href="img/pandy-icon.jpeg">
     <link rel="stylesheet" href="css/pandy.css">
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ysabeau+SC">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <title>Pandy</title>
 </head>
 <body>
@@ -16,7 +18,7 @@
             <div class="flex_row_center header_position">
                 <div class="header_img header_text flex_row_center">
                     <img src="img/pfp_icon.jpeg" alt="Logo" />
-                    <h1>PANDY</h1>
+                    <h1>P A N D Y</h1>
                 </div>
                 <div class="header_svg_list flex_row_center">
                                 <a href="https://discord.com/users/797967951415345193" class="button">
@@ -34,9 +36,8 @@
                     <nav>
                     </nav>
                 </div>
-                <div class="flex_column_center color_change_container">
-                    <img src="img/sun_icon.png" alt="Light Mode">
-                    <img src="img/moon_icon.png" alt="Dark Mode">
+                <div class="flex_row_center color_change_container" id="mode-toggle">
+                    <img src="img/moon_icon.png" alt="Toggle Light Mode" id="mode-toggle-img" class="color_change_button">
                 </div>
             </div>
                 <!-- Menu Codes End -->
@@ -59,26 +60,38 @@
             </a>
             <a class="main_small_a_item">
                 <button class="main_small_button_item">
-                    <a href="https://namemc.com/profile/xPqndy.1">Minecraft IGN (Main)</a>
-                    <br>
-                    <a href="https://akasha.cv/profile/846883227">Genshin UID (Asia)</a>
-                    <br>
-                    <a href="https://osu.ppy.sh/users/28183954" rel="nofollow">osu! profile</a>
-                    <br>
+                    <p>It is currently:</p>
+                    <p class="date-time" id="date-time"></p>
                 </button>
             </a>
         </div>
         <!--Menu Small Item-->
                 <div class="main_small_button_list">
-                    <a class="main_small_a_item" href="https://namemc.com/profile/xPqndy.1">
-                        <button class="main_small_button_item_click">Minecraft IGN (Main)</button>
-                    </a>
-                    <a class="main_small_a_item" href="https://akasha.cv/profile/846883227">
-                        <button class="main_small_button_item_click">Genshin UID (Asia)</button>
-                    </a>
-                        <a class="main_small_a_item" href="https://osu.ppy.sh/users/28183954" rel="nofollow">
-                        <button class="main_small_button_item_click">osu! profile</button>
-                    </a>
+                    <!--on hover show player skin and username-->
+                    <div class="main_small_a_item">
+                        <button class="main_small_button_item_click" onclick="window.location.href='https://namemc.com/profile/xPqndy.1';">Minecraft IGN (Main)</button>
+                        <div class="main_small_a_item_desc">
+                            <p>
+                                <div>
+                                    <img class="player_skin" alt="Player Skin" src="./img/mcskin.png">
+                                </div>
+                                <div>
+                                    <p>xPqndy</p>
+                                    <a href="https://plancke.io/hypixel/player/stats/xpqndy" style="color: #80b5e0; text-decoration: none;"> > Hypixel</a>
+                                    <br> <br>
+                                    <a href="https://sky.shiiyu.moe/stats/xPqndy/Peach" style="color: #80b5e0; text-decoration: none;"> > Hypixel Skyblock</a>
+                                </div>
+                            </p>
+                            </div>
+                        </div>
+                    <!--on hover show player profile-->
+                    <div class="main_small_a_item">
+                        <button class="main_small_button_item_click" onclick="window.location.href='https://akasha.cv/profile/846883227';">Genshin UID (Asia)</button>
+                    </div>
+                    <!--on hover show osu stats-->
+                    <div class="main_small_a_item" rel="nofollow">
+                        <button class="main_small_button_item_click" onclick="window.location.href='https://osu.ppy.sh/users/28183954';">osu! profile</button>
+                    </div>
                 </div>
         <!-- Menu Item -->
         <a class="main_a_item" href="http://axle.coffee/"
@@ -86,11 +99,12 @@
             <button class="main_button_item">The Next Shuttle to Axle Land</button>
         </a>
     </section>
+        <script src="js/config.js"></script>
         <script src="js/main.js"></script>
 </body>
 </html>
 
     <!--
-    An axle website 
+    An axle website (sure bud)
     Copyright 2022-2023 all project rights reserved to SkyStats Development
     -->

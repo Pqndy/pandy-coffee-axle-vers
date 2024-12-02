@@ -1,5 +1,5 @@
 :root {
-    --font_family: 'Ysabeau SC';
+    --font_family: "Inter", sans-serif;
     --font_size: 18px;
     --background_color: #000;
     --background_image: url("../img/daybg.jpg");
@@ -22,9 +22,13 @@
     --textarea_background_color: #4747478e;
     --textarea_text_color: #fff;
     --textarea_link_text_color: #ffffff;
-    --footer_background_color: #4747478e;
+    --footer_background_color: #456782;
     --footer_text_color: #fff;
     --footer_link_text_color: #ffffff;
+}
+
+.dark-mode {
+    background-image: url("../img/nightbg.jpg");
 }
 
 /* Basic Codes */
@@ -39,6 +43,9 @@ body {
     background-size: cover;
     flex-direction: column;
     flex-wrap: wrap;
+    color: black;
+    transition: background 0.3s, color 0.3s;
+    position: relative;
 }
 
 .flex_column_center {
@@ -53,7 +60,7 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -154,7 +161,6 @@ body {
 }
 
 .color_change_container img {
-    margin: 0.2em;
     padding: 0.4em;
     width: var(--icon_width);
     border-radius: 0.3em;
@@ -165,6 +171,17 @@ body {
     color: var(--button_text_hover_color);
     animation: fadeIn 0.5s forwards, fadeOut 0.2s 2.2s forwards;
 }
+
+.main_small_button_item_click:hover {
+    background-color: var(--button_background_hover_color);
+    color: var(--button_text_hover_color);
+    animation: fadeIn 0.5s forwards, fadeOut 0.2s 2.2s forwards;
+}
+
+.color_change_button {
+    transition: opacity 0.3s ease;
+}
+
 @keyframes fadeIn {
     from { opacity: 0}
     to { opacity: 1}
@@ -215,6 +232,7 @@ main {
     min-height: 3em;
     text-align: center;
     cursor: pointer;
+    margin: 1em;
 }
 
 .main_small_button_list {
@@ -229,7 +247,7 @@ main {
     text-align: left;
 }
 
-.main_small_button_item a{
+.main_small_button_list a{
     padding: 0.3em;
     margin: 0.3em;
     text-align: left;
@@ -266,6 +284,35 @@ main {
     text-align: center;
     cursor: pointer;
 }
+
+.main_small_a_item_desc {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-10px);
+    visibility: hidden;
+    overflow: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, max-height 0.3s ease;
+    background-color: var(--button_background_color);
+    border-radius: 0.8em;
+    margin-top: 5px;
+    color: #fff;
+    display: flex;
+}
+
+.main_small_a_item:hover .main_small_a_item_desc {
+    opacity: 1;
+    visibility: visible;
+    max-height: 300px;
+    transform: translateY(0);
+}
+
+.player_skin {
+    display: block; 
+    width: 150px; 
+    height: auto; 
+    margin-bottom: 5px; 
+}
+
 
 /* Footer Codes */
 
